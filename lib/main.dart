@@ -42,9 +42,15 @@ Future<void> syncPro(
 }
 
 class KouteiApp extends StatelessWidget {
-  const KouteiApp({super.key, required this.state, required this.purchases});
+  const KouteiApp({
+    super.key,
+    required this.state,
+    required this.purchases,
+    this.navigatorKey,
+  });
   final AppState state;
   final PurchaseGateway purchases;
+  final GlobalKey<NavigatorState>? navigatorKey;
 
   @override
   Widget build(BuildContext context) {
@@ -52,6 +58,7 @@ class KouteiApp extends StatelessWidget {
       state: state,
       purchases: purchases,
       child: MaterialApp(
+        navigatorKey: navigatorKey,
         title: appName,
         debugShowCheckedModeBanner: false,
         theme: buildTheme(),

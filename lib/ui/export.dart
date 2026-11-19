@@ -33,14 +33,19 @@ extension on ExportRange {
 
 /// 元請さん・お客さんに送る画像とPDF
 class ExportScreen extends StatefulWidget {
-  const ExportScreen({super.key, this.onlySiteId});
+  const ExportScreen({
+    super.key,
+    this.onlySiteId,
+    this.initialRange = ExportRange.twoWeeks,
+  });
   final String? onlySiteId;
+  final ExportRange initialRange;
   @override
   State<ExportScreen> createState() => _ExportScreenState();
 }
 
 class _ExportScreenState extends State<ExportScreen> {
-  ExportRange range = ExportRange.twoWeeks;
+  late ExportRange range = widget.initialRange;
   Audience audience = Audience.contractor;
   final boundary = GlobalKey();
   bool busy = false;
