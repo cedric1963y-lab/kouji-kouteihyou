@@ -2,7 +2,7 @@ name: shokunin_koutei
 description: "職人向けの工程表。現場の期間と節目を横の帯で見て、雨や遅れでまとめてずらし、画像やPDFで元請・お客さんに送る。"
 publish_to: 'none'
 
-version: 1.0.0+1
+version: 1.0.1+2
 
 environment:
   sdk: ^3.13.4
